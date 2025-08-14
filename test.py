@@ -77,3 +77,4 @@ while True:
         break
     else:
         print("❌ Lựa chọn không hợp lệ! Vui lòng nhập 1-4.")
+        #phá nè hihi
