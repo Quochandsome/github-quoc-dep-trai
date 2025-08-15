@@ -36,7 +36,7 @@ class qlsv:
             sv = sinhvien(masinhvien, hotensv, diemtoan, diemly, diemhoa)
             self.dssv.append(sv)
     def sapxep(self):
-        if not self.dssv:
+        if not self.dssv :
             print("❌ Danh sách trống!")
             return
         n = len(self.dssv)
@@ -60,11 +60,14 @@ class qlsv:
             print("❌ Danh sách trống!")
             return
         a = int(input("Nhập MSSV cần tìm kiếm: "))
+        found = False  # biến cờ để kiểm tra có tìm thấy hay không
         for sv in self.dssv:
             if sv.masv == a:
                 print(f"MSSV: {sv.masv} -- Họ tên: {sv.hoten} -- Toán: {sv.toan} -- Lý: {sv.ly} -- Hóa: {sv.hoa} -- ĐTB: {sv.dtb():.2f} -- Xếp loại: {sv.xeploai()}")
-                return
-        return ("❌ Không tìm thấy sinh viên!")
+                found = True
+                break
+        if not found:
+            print("❌ Không tìm thấy sinh viên!")
 
 ql = qlsv()
 while True:
